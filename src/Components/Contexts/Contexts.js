@@ -13,21 +13,24 @@ const Contexts = ({ children }) => {
     const [user, setUser] = useState(null)
 
 
-
+    const [loading, setLoading] = useState(false)
 
     //email log in
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     //update user profile
     const updateUserProfile = (profile) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, profile)
     }
 
 
     //email verification
     const verifyEmail = () => {
+        setLoading(true)
         return sendEmailVerification(auth.currentUser)
     }
 
@@ -38,18 +41,21 @@ const Contexts = ({ children }) => {
 
 
     const googleSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider);
     }
 
     //login with email and password
 
     const logIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
 
     //reset password
     const resetPassword = () => {
+        setLoading(true)
         return sendPasswordResetEmail(auth, auth.currentUser.email)
     }
 
@@ -57,6 +63,7 @@ const Contexts = ({ children }) => {
     //log out
 
     const logOut = () => {
+        setLoading(true)
         return signOut(auth);
     }
 
@@ -67,6 +74,7 @@ const Contexts = ({ children }) => {
             if (currentUser == null || currentUser.emailVerified) {
                 setUser(currentUser)
             }
+            setLoading(false)
         })
 
 
@@ -86,7 +94,8 @@ const Contexts = ({ children }) => {
         googleSignIn,
         logOut,
         resetPassword,
-        logIn
+        logIn,
+        loading
     }
 
     return (
