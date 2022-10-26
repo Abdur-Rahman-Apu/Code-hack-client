@@ -13,6 +13,8 @@ const Contexts = ({ children }) => {
     const [user, setUser] = useState(null)
 
 
+
+
     //email log in
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)

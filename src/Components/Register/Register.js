@@ -3,7 +3,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Contexts/Contexts';
 import './Register.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -125,6 +125,12 @@ const Register = () => {
                                     Accept terms & conditions
                                 </label>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className='row mb-3'>
+                        <div className='col-sm-10 offset-sm-2'>
+                            <Link to='/login'>Do you have any account? please log in</Link>
                         </div>
                     </div>
                     <button disabled={!checked} type="submit" className={(!checked) ? "register-btn-disabled" : "register-btn"}>Register</button>

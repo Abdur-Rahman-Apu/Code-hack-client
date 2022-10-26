@@ -81,6 +81,11 @@ const Login = () => {
                                 <Link onClick={handleForgetPassword}>Forgot password?</Link>
                             </div>
                         </div>
+                        <div className='row mb-3'>
+                            <div className='col-sm-10 offset-sm-2'>
+                                <Link to='/register'>Are you a new user? please register</Link>
+                            </div>
+                        </div>
 
 
                         <button type="submit" className="register-btn">Login</button>
