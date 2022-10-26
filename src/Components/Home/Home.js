@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Carousel from '../Carousel/Carousel';
 import Courses from '../Courses/Courses';
-import Navbar from '../Shared/Navbar/Navbar';
+
 
 const Home = () => {
 
