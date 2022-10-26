@@ -15,8 +15,24 @@ const Login = () => {
         const password = form.password.value;
 
         logIn(email, password)
-            .then()
-            .catch()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success("Successfully log in")
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
+    const handleForgetPassword = () => {
+        resetPassword()
+            .then(() => {
+                toast.success("Please check your email to reset password")
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
     return (
         <div>
@@ -43,7 +59,7 @@ const Login = () => {
 
                         <div className='row mb-3'>
                             <div className='col-sm-10 offset-sm-2'>
-                                <Link>Forgot password?</Link>
+                                <Link onClick={handleForgetPassword}>Forgot password?</Link>
                             </div>
                         </div>
 

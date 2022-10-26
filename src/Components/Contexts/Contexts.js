@@ -47,8 +47,8 @@ const Contexts = ({ children }) => {
 
 
     //reset password
-    const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email)
+    const resetPassword = () => {
+        return sendPasswordResetEmail(auth, auth.currentUser.email)
     }
 
 
