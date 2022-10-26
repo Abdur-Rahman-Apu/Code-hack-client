@@ -1,16 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Contexts';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaUserAlt, Falig } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { FMdDarkMode } from "@react-icons/all-files"
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
     console.log(user);
 
+    const [checked, setChecked] = useState(false);
+    const handleCheckBox = () => {
+        setChecked(!checked)
+    }
 
     //log out
 
@@ -47,6 +52,10 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/cart">Cart</Link>
+                        </li>
                         <li className="nav-item d-flex ms-4 align-items-center">
                             {
                                 user?.uid ?
@@ -63,7 +72,7 @@ const Navbar = () => {
                                                 </>
                                                 :
                                                 <Tippy content={user?.displayName}>
-                                                    <Tippy content="hello"></Tippy>
+                                                    <FaUserAlt />
                                                 </Tippy>
 
                                         }
@@ -77,6 +86,13 @@ const Navbar = () => {
                                         <button className='btn'>Log in</button>
                                     </Link>
                             }
+                        </li>
+
+                        <li className="nav-item">
+                            <div className='form-switch'>
+                                <input onClick={handleCheckBox} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+                                <label className="form-check-label ms-3" for="flexSwitchCheckChecked">{(!checked) ? 'light' : 'dark'}</label>
+                            </div>
                         </li>
 
                     </ul>
