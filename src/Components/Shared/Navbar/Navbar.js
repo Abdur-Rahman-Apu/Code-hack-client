@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/Contexts';
+import { FaUserAlt } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user);
+
+
+    //log out
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("Log out successfully")
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-white shadow-lg px-3">
             <div className="container-fluid">
@@ -26,10 +45,30 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">
-                                <button className='btn'>Log in</button>
-                            </Link>
+                        <li className="nav-item d-flex ms-4 align-items-center">
+                            {
+                                user?.uid ?
+                                    <>
+                                        {user.displayName}
+
+                                        {
+                                            user?.photoURL ?
+                                                <>
+                                                    <img className="ms-2 rounded" src={user?.photoURL} height={40} width={40} alt="user img" />
+                                                </>
+                                                :
+                                                <FaUserAlt />
+
+                                        }
+                                        <Link className="nav-link" to="/login">
+                                            <button onClick={handleLogOut} className='btn'>Log out</button>
+                                        </Link>
+                                    </>
+                                    :
+                                    <Link className="nav-link" to="/login">
+                                        <button className='btn'>Log in</button>
+                                    </Link>
+                            }
                         </li>
 
                     </ul>

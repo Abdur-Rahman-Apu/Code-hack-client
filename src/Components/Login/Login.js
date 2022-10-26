@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/Contexts';
 import toast from 'react-hot-toast';
@@ -7,6 +7,8 @@ import toast from 'react-hot-toast';
 const Login = () => {
 
     const { user, logIn, resetPassword } = useContext(AuthContext)
+
+    const navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -19,6 +21,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("Successfully log in")
+                navigate('/')
             })
             .catch(error => {
                 toast.error(error.message)
