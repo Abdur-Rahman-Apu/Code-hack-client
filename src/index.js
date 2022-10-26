@@ -4,16 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Toaster } from 'react-hot-toast';
+import Contexts from './Components/Contexts/Contexts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Contexts>
     <Toaster
       position="top-center"
       reverseOrder={false}
     />
     <App />
-  </React.StrictMode>
+  </Contexts>
 );
 
 // If you want to start measuring performance in your app, pass a function
