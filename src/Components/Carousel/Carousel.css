@@ -1,0 +1,40 @@
+.first-item-left-side {
+    background-color: #FAF7F0;
+    width: 50%;
+    font-size: 1rem;
+}
+
+.second-item-left-side {
+    background-color: #EDE4E0;
+    width: 50%;
+    font-size: 1rem;
+}
+
+.explore-course-btn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #C8DBBE;
+    font-weight: bold;
+    transition: all 1s;
+}
+
+.carousel-item-img {
+    width: 50%;
+}
+
+.explore-course-btn:hover {
+    background-color: #9F8772;
+}
+
+@media screen and (max-width:991px) {
+
+    .first-item-left-side,
+    .second-item-left-side {
+        width: 100%;
+    }
+
+    .carousel-item-img {
+        width: 100%;
+    }
+}
