@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Contexts';
 import { FaUserAlt } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const Navbar = () => {
 
@@ -51,15 +53,21 @@ const Navbar = () => {
                                     <>
                                         {user.displayName}
 
+
                                         {
                                             user?.photoURL ?
                                                 <>
-                                                    <img className="ms-2 rounded" src={user?.photoURL} height={40} width={40} alt="user img" />
+                                                    <Tippy content={user?.displayName}>
+                                                        <img className="ms-2 rounded" src={user?.photoURL} height={40} width={40} alt="user img" />
+                                                    </Tippy>
                                                 </>
                                                 :
-                                                <FaUserAlt />
+                                                <Tippy content={user?.displayName}>
+                                                    <Tippy content="hello"></Tippy>
+                                                </Tippy>
 
                                         }
+
                                         <Link className="nav-link" to="/login">
                                             <button onClick={handleLogOut} className='btn'>Log out</button>
                                         </Link>

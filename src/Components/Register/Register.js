@@ -3,6 +3,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Contexts/Contexts';
 import './Register.css'
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -12,8 +13,7 @@ const Register = () => {
 
 
 
-
-
+    const navigate = useNavigate();
     // handle checkbox 
     const handleCheckBox = () => {
         setChecked(!checked)
@@ -55,6 +55,9 @@ const Register = () => {
                     .catch(error => {
                         toast.error(error.message)
                     })
+
+
+                navigate('/')
 
             })
             .catch(error => {

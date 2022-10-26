@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
-    const { user, logIn, resetPassword } = useContext(AuthContext)
+    const { user, logIn, resetPassword, googleSignIn } = useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -28,10 +28,26 @@ const Login = () => {
             })
     }
 
+    //handle forget password
+
     const handleForgetPassword = () => {
         resetPassword()
             .then(() => {
                 toast.success("Please check your email to reset password")
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
+    //handle google sign in
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success("Successfully done")
+                navigate('/')
             })
             .catch(error => {
                 toast.error(error.message)
@@ -76,7 +92,7 @@ const Login = () => {
 
                     </p>
 
-                    <button className='w-100 mt-3 py-2 google-btn'>
+                    <button onClick={handleGoogleSignIn} className='w-100 mt-3 py-2 google-btn'>
                         <FaGoogle className='me-3' />
                         Log in with Google
                     </button>
