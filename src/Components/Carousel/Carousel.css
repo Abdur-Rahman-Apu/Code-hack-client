@@ -27,6 +27,21 @@
     background-color: #9F8772;
 }
 
+.blockquote {
+    font-family: var(--Inter);
+}
+
+.item2-title {
+    font-family: var(--roboto);
+}
+
+.item2-subtitle {
+    font-family: var(--Inter);
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+
 @media screen and (max-width:991px) {
 
     .first-item-left-side,
