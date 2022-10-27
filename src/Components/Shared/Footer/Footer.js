@@ -1,21 +1,22 @@
 import React from 'react';
 import { GrLanguage } from "react-icons/gr"
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='mt-5 p-2 d-flex justify-content-between align-items-center bg-light'>
-            <div>
+        <div className='mt-5 p-2 d-flex justify-content-center justify-content-md-between align-items-center bg-light'>
+            <div className='d-none d-md-block ms-3'>
                 <img src={"web-development.png"} height={60} width={60} alt="img" />
-                <span className='ms-3'>Code Hack</span>
+                <span className='ms-3 fw-bold website-title'>Code <span className='title-style'>Hack</span></span>
             </div>
 
-            <div>
-                Copyright &copy; 2022
+            <div className='fw-bold'>
+                Copyright &copy; 2023
             </div>
 
-            <div>
+            <div className='d-none d-md-block me-3'>
                 <GrLanguage className='me-2' />
-                <span>English</span>
+                <span className='fw-bold'>English</span>
             </div>
         </div>
     );
