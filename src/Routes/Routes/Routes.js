@@ -9,7 +9,7 @@ import Login from "../../Components/Login/Login";
 
 import PageNotFound from '../../Components/PageNotFound/PageNotFound'
 import Register from "../../Components/Register/Register";
-import Details from "../../Details/Details";
+import Details from "../../Components/Details/Details";
 import CourseLayout from "../../layout/CourseLayout";
 import Main from "../../layout/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
