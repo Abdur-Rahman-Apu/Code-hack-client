@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Contexts';
 import { FaUserAlt, Falig } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FMdDarkMode } from "@react-icons/all-files"
+import './Navbar.css'
 
 const Navbar = () => {
 
@@ -41,7 +42,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/" >Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/courses">Courses</Link>

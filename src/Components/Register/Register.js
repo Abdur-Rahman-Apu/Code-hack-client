@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { FaGoogle, FaGithub } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Contexts/Contexts';
 import './Register.css'
@@ -7,13 +6,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
-    const { user, createUser, updateUserProfile, verifyEmail, googleSignIn, setLoading } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, setLoading, setUser } = useContext(AuthContext);
 
     const [checked, setChecked] = useState(false);
 
 
 
     const navigate = useNavigate();
+
+
+
     // handle checkbox 
     const handleCheckBox = () => {
         setChecked(!checked)
@@ -33,6 +35,7 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+
 
                 //update name and photo
                 const profile = {
@@ -60,9 +63,9 @@ const Register = () => {
                     }).finally(() => {
                         setLoading(false)
                     })
-
-
                 navigate('/')
+                setUser(user)
+
 
             })
             .catch(error => {
@@ -73,21 +76,6 @@ const Register = () => {
                 setLoading(false)
             })
 
-    }
-
-
-    //google sign in
-
-    const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                toast.success("Successfully done")
-            })
-            .catch(error => {
-                toast.error(error.message)
-            })
     }
 
     return (
@@ -144,20 +132,7 @@ const Register = () => {
                     <button disabled={!checked} type="submit" className={(!checked) ? "register-btn-disabled" : "register-btn"}>Register</button>
                 </form>
 
-                <p className='text-center my-3'>
 
-                    <span>Or</span>
-
-                </p>
-
-                <button onClick={handleGoogleSignIn} className='w-100 mt-3 py-2 google-btn'>
-                    <FaGoogle className='me-3' />
-                    Log in with Google
-                </button>
-                <button className='w-100 mt-3 py-2 github-btn'>
-                    <FaGithub className='me-3' />
-                    Log in with Github
-                </button>
             </div>
         </div>
     );

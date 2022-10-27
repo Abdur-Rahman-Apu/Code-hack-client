@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
-    const { user, logIn, resetPassword, googleSignIn, setLoading } = useContext(AuthContext)
+    const { user, logIn, resetPassword, googleSignIn, setLoading, githubSignIn, setUser } = useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -62,11 +62,31 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("Successfully done")
-                navigate('/')
+                setUser(user)
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 toast.error(error.message)
             })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+
+
+    // handle github sign in
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success("Successfully login")
+                setUser(user)
+                navigate(from, { replace: true });
+            })
+            .catch(error => [
+                toast.error(error.message)
+            ])
             .finally(() => {
                 setLoading(false)
             })
@@ -119,7 +139,7 @@ const Login = () => {
                         <FaGoogle className='me-3' />
                         Log in with Google
                     </button>
-                    <button className='w-100 mt-3 py-2 github-btn'>
+                    <button onClick={handleGithubSignIn} className='w-100 mt-3 py-2 github-btn'>
                         <FaGithub className='me-3' />
                         Log in with Github
                     </button>
