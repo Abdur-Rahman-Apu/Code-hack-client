@@ -24,8 +24,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast.success("Successfully log in")
-                navigate(from, { replace: true })
+
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                    toast.success("Successfully log in")
+                } else {
+                    toast.error('Please verify your email')
+                }
             })
             .catch(error => {
                 toast.error(error.message)

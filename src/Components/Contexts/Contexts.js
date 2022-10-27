@@ -13,7 +13,7 @@ const Contexts = ({ children }) => {
     const [user, setUser] = useState(null)
 
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     //email log in
     const createUser = (email, password) => {
@@ -23,14 +23,14 @@ const Contexts = ({ children }) => {
 
     //update user profile
     const updateUserProfile = (profile) => {
-        setLoading(true)
+
         return updateProfile(auth.currentUser, profile)
     }
 
 
     //email verification
     const verifyEmail = () => {
-        setLoading(true)
+
         return sendEmailVerification(auth.currentUser)
     }
 
@@ -41,7 +41,7 @@ const Contexts = ({ children }) => {
 
 
     const googleSignIn = () => {
-        setLoading(true)
+
         return signInWithPopup(auth, googleProvider);
     }
 
