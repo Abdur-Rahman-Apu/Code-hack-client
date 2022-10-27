@@ -1,0 +1,5 @@
+.checkout-title {
+    font-family: var(--Inter);
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
