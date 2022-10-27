@@ -38,6 +38,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <CourseLayout></CourseLayout>,
+                errorElement: <PageNotFound></PageNotFound>,
                 children: [
 
                     {
@@ -59,5 +60,9 @@ export const router = createBrowserRouter([
             },
         ]
 
+    },
+    {
+        path: '*',
+        element: <PageNotFound></PageNotFound>
     }
 ])
