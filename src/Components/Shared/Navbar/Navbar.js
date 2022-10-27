@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Contexts';
-import { FaUserAlt, Falig } from 'react-icons/fa';
+import { FaUserAlt } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { FMdDarkMode } from "@react-icons/all-files"
 import './Navbar.css'
 
 const Navbar = () => {
@@ -30,12 +29,16 @@ const Navbar = () => {
             })
     }
     return (
-        <nav className="navbar navbar-expand-lg bg-white shadow-lg px-3">
+        <nav className="navbar navbar-expand-lg bg-light shadow-lg px-3">
             <div className="container-fluid">
+
+                {/* navbar logo and title  */}
                 <Link className="navbar-brand d-flex align-items-center" to="/">
                     <img src="web-development.png" alt="Logo" width="50" height="44" className="d-inline-block align-text-top me-3" />
-                    Code Hack
+                    <span className='fw-bold website-title'>Code <span className='title-style'>Hack</span></span>
                 </Link>
+
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -54,7 +57,7 @@ const Navbar = () => {
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
 
-                        <li className="nav-item d-flex ms-4 align-items-center">
+                        <li className="nav-item d-flex align-items-center">
                             {
                                 user?.uid ?
                                     <>
@@ -81,7 +84,7 @@ const Navbar = () => {
                                     </>
                                     :
                                     <Link className="nav-link" to="/login">
-                                        <button className='btn'>Log in</button>
+                                        <button className='btn fw-bold'>Log in</button>
                                     </Link>
                             }
                         </li>

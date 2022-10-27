@@ -1,2 +1,14 @@
 /* google fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Playfair+Display:wght@700&family=Poppins&family=Roboto:wght@400;700&display=swap');
+
+
+
+/* root variable  */
+:root {
+  --main-color: #f6b93b;
+  --secondary-color: #1dd1a1;
+  --roboto: 'Roboto', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+  --playfair: 'Playfair Display', serif;
+  --Inter: 'Inter', sans-serif;
+}

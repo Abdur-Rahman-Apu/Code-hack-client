@@ -1,0 +1,16 @@
+.navbar {
+    font-family: var(--roboto);
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    color: var(--secondary-color);
+}
+
+.website-title {
+    font-family: var(--roboto);
+}
+
+.title-style {
+    color: var(--secondary-color);
+}
