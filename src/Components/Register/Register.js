@@ -63,7 +63,7 @@ const Register = () => {
                     }).finally(() => {
                         setLoading(false)
                     })
-                navigate('/')
+                navigate('/login')
                 setUser(user)
 
 
