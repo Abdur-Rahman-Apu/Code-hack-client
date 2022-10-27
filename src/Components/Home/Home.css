@@ -1,3 +1,13 @@
 .courses-home-part {
     margin: 0 120px;
 }
+
+.courses-home-part-title {
+    font-family: var(--Inter);
+}
+
+@media screen and (max-width:690px) {
+    .courses-home-part {
+        margin: 0;
+    }
+}

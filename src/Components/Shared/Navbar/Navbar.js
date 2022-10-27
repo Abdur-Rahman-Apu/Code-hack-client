@@ -61,7 +61,7 @@ const Navbar = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        {user.displayName}
+
 
 
                                         {

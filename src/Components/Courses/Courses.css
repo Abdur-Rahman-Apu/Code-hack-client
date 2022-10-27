@@ -1,6 +1,14 @@
 .card-btn {
     background-color: #f6b93b;
+    font-family: var(--roboto);
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     padding: 10px;
+    transition: 1s all;
+}
+
+.card-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }
