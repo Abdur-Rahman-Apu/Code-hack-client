@@ -71,7 +71,7 @@ const Navbar = () => {
                                                 </>
                                                 :
                                                 <Tippy content={user?.displayName}>
-                                                    <FaUserAlt />
+                                                    <span><FaUserAlt /></span>
                                                 </Tippy>
 
                                         }
