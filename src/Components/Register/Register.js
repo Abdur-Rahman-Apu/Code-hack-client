@@ -63,8 +63,9 @@ const Register = () => {
                     }).finally(() => {
                         setLoading(false)
                     })
+                toast.success("Please log in")
                 navigate('/login')
-                setUser(user)
+
 
 
             })
