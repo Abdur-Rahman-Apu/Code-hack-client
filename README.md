@@ -3,7 +3,7 @@
 This website is a teaching platform website where anyone can enroll to the specific course.
 
 
-### Live website link: [https://mcq-hack.netlify.app/](https://mcq-hack.netlify.app/)
+### Live website link: [https://code-hack-61b89.web.app/](https://code-hack-61b89.web.app/)
 
 
 

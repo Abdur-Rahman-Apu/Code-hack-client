@@ -10,7 +10,7 @@ const CategoryShow = () => {
     //load categories 
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://code-hack-website-server-abdur-rahman-apu.vercel.app/categories')
             .then(result => result.json())
             .then(data => setCategories(data))
     }, [])

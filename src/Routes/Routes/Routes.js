@@ -48,12 +48,12 @@ export const router = createBrowserRouter([
                     {
                         path: '/courses/course/:id',
                         element: <Details></Details>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                        loader: ({ params }) => fetch(`https://code-hack-website-server-abdur-rahman-apu.vercel.app/course/${params.id}`)
                     },
                     {
                         path: '/courses/cart/course/:id',
                         element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                        loader: ({ params }) => fetch(`https://code-hack-website-server-abdur-rahman-apu.vercel.app/course/${params.id}`)
                     },
                 ]
 

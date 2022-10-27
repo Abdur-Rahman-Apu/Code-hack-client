@@ -7,7 +7,7 @@ const Courses = () => {
 
     // load courses from the server 
     useEffect(() => {
-        fetch("http://localhost:5000/allCourses")
+        fetch("https://code-hack-website-server-abdur-rahman-apu.vercel.app/allCourses")
             .then(result => result.json())
             .then(data => setCourses(data))
     }, [])
