@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Code Hack website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website is a teaching platform website where anyone can enroll to the specific course.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Live website link: [https://mcq-hack.netlify.app/](https://mcq-hack.netlify.app/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+* On the website, there are six courses. The courses are:
+    * C programming Bootcamp: From Beginner to Advanced
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    * Python BootCamp: Learn Python programming language
 
-### `npm run build`
+    * Learn Java: From Basic to Advance
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    * Learn JavaScript: The complete JavaScript course
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    * React: The Complete Course including Hooks, Router etc.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    * HTML & CSS crash course
 
-### `npm run eject`
+* The user can see the Course details in the courses route.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* If the user clicks on the card button which name is "Explore details", then the user will see the course details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Course details page contains:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        * Course title
+        * Course image
+        * Rating
+        * Number of enrolled students
+        * Mentor's information
+        * Course description
+        * Course outcomes
+        * Course contents
+        * Requirements
+        * Course price
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* The user can download the Course information's by clicking the download icon which is present in the top-right side in the Course details page.
 
-## Learn More
+* On the website, a blog page is available. There some important questions solutions are given.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Technologies (Frameworks or libraries or packages)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Bootstrap
+* React
+* React Router Dom
+* React icons
+* React Hot Toast
+* React-to-pdf 
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
