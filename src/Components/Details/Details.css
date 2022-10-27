@@ -8,8 +8,31 @@
     background-color: #f6b93b;
     padding: 10px 20px;
     border-radius: 5px;
+    font-weight: bold;
+    transition: 1s all;
+}
+
+
+.premium-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 .download-btn {
     cursor: pointer;
+    font-size: 1.5em;
+}
+
+.download-btn:hover {
+    color: var(--main-color);
+}
+
+.detail-title {
+    font-family: var(--Inter);
+    color: var(--secondary-color);
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 5px;
 }

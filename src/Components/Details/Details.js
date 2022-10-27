@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaDownload, FaAddressCard } from 'react-icons/fa';
 import { FcRating } from 'react-icons/fc';
-import { MdReviews, MdOutlineWork } from 'react-icons/md';
+import { MdReviews, MdOutlineWork, MdSubtitles } from 'react-icons/md';
 import './Details.css'
 import Pdf from "react-to-pdf";
 const ref = React.createRef();
@@ -24,7 +24,7 @@ const Details = () => {
 
     return (
         <div className='mt-5'>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-between align-items-center'>
                 <h3>{title}</h3>
                 <Pdf targetRef={ref} filename={`${title}-course-details.pdf`} >
                     {({ toPdf }) => <FaDownload className='download-btn' onClick={toPdf} />}
@@ -39,11 +39,11 @@ const Details = () => {
                 <p>{short_description}</p>
 
                 <div className='d-flex justify-content-between'>
-                    <div className='d-flex flex-column '>
-                        <p className='fw-bold m-0'>
+                    <div className='d-flex flex-column'>
+                        <p className='fw-bold m-0 title-style'>
                             {rating}
                         </p>
-                        <div >
+                        <div className='icon-color'>
                             <FaStar />
                             <FaStar />
                             <FaStar />
@@ -53,7 +53,8 @@ const Details = () => {
                     </div>
 
                     <div>
-                        <p> <span className='fw-bold'>Enrolled:</span> {enrolled} students</p>
+                        <p className='fw-bold'> <span className='fw-bold title-style'>Enrolled:</span> {enrolled} students</p>
+                        <span className='fw-bold'>{<MdSubtitles className='icon' />} {language}</span>
                     </div>
                 </div>
 
@@ -64,7 +65,7 @@ const Details = () => {
                 <hr />
 
                 <div className='mb-4'>
-                    <h3>Descriptions</h3>
+                    <h3 className='detail-title'>Descriptions</h3>
 
                     <div>
                         {
@@ -74,7 +75,7 @@ const Details = () => {
                 </div>
 
                 <div>
-                    <h3>Outcomes</h3>
+                    <h3 className='detail-title'>Outcomes</h3>
 
                     <div>
                         {
@@ -84,24 +85,24 @@ const Details = () => {
                 </div>
 
                 <div className='mt-5'>
-                    <h4>Course Contents</h4>
+                    <h3 className='detail-title'>Course Contents</h3>
 
                     <ul className='list-group mt-3'>
                         {
-                            Course_content.map(content => <li className='list-group-item'>{content}</li>)
+                            Course_content.map(content => <li className='list-group-item fw-bold'>{content}</li>)
                         }
                     </ul>
                 </div>
             </div>
             <div className='mt-4'>
-                <h3>Requirements</h3>
+                <h3 className='detail-title'>Requirements</h3>
                 <div className='mt-4'>
                     {requirements.map(req => <li>{req}</li>)}
                 </div>
             </div>
 
             <div className='mt-3'>
-                <h3 className='mt-5'>Mentor:</h3>
+                <h3 className='mt-5 detail-title'>Mentor</h3>
 
                 <div className='d-flex align-items-center mt-5'>
                     <img src={tutor_img} className=" author-img img-fluid rounded-pill" alt="img" />
@@ -114,16 +115,16 @@ const Details = () => {
 
 
                 <div className='mt-5'>
-                    <p><FcRating /> {tutor.rating} ratings</p>
-                    <p><MdReviews /> {reviews} reviews</p>
-                    <p><MdOutlineWork /> {profession} </p>
-                    <p><FaAddressCard className='me-1' />{location}</p>
+                    <p><FcRating className=' icon' /> {tutor.rating} ratings</p>
+                    <p><MdReviews className='icon' /> {reviews} reviews</p>
+                    <p><MdOutlineWork className='icon' /> {profession} </p>
+                    <p><FaAddressCard className='me-1 icon ' />{location}</p>
                 </div>
             </div>
 
-            <div>
-                <h3>Price:</h3>
-                <span>${price}</span>
+            <div className='my-5'>
+                <h3 className='title-style'>Price</h3>
+                <span className='fw-bold display-6'>${price}</span>
             </div>
 
             <div>
