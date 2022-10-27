@@ -79,10 +79,10 @@ const Register = () => {
     }
 
     return (
-        <div className='my-5 d-flex justify-content-center'>
+        <div className='my-5 d-flex justify-content-center register-container'>
             <div className='w-50  shadow-sm p-4 border border-1 rounded'>
 
-                <h3 className='text-center'>Register</h3>
+                <h3 className='text-center title-style'>Register</h3>
 
                 <form onSubmit={handleRegister} className='mt-3'>
                     <div className="row mb-3">
@@ -117,7 +117,7 @@ const Register = () => {
                         <div className="col-sm-10 offset-sm-2">
                             <div className="form-check">
                                 <input onClick={handleCheckBox} className="form-check-input" type="checkbox" id="gridCheck1" />
-                                <label className="form-check-label" htmlFor="gridCheck1">
+                                <label className="form-check-label fw-bold" htmlFor="gridCheck1">
                                     Accept terms & conditions
                                 </label>
                             </div>

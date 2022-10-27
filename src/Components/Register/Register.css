@@ -32,3 +32,12 @@
     background-color: #333333;
     color: white;
 }
+
+.register-container a {
+    text-decoration: none;
+    color: gray;
+}
+
+.register-container a:hover {
+    color: var(--main-color);
+}

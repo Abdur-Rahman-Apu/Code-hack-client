@@ -1,0 +1,8 @@
+.login-container a {
+    text-decoration: none;
+    color: gray;
+}
+
+.login-container a:hover {
+    color: var(--main-color);
+}

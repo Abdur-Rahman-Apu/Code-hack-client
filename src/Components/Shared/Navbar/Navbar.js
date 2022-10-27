@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import './Navbar.css'
+import logo from '../../../assets/web-development.png'
 
 const Navbar = () => {
 
@@ -34,7 +35,7 @@ const Navbar = () => {
 
                 {/* navbar logo and title  */}
                 <Link className="navbar-brand d-flex align-items-center" to="/">
-                    <img src="web-development.png" alt="Logo" width="50" height="44" className="d-inline-block align-text-top me-3" />
+                    <img src={logo} alt="Logo" width="50" height="44" className="d-inline-block align-text-top me-3" />
                     <span className='fw-bold website-title'>Code <span className='title-style'>Hack</span></span>
                 </Link>
 
@@ -61,9 +62,6 @@ const Navbar = () => {
                             {
                                 user?.uid ?
                                     <>
-
-
-
                                         {
                                             user?.photoURL ?
                                                 <>

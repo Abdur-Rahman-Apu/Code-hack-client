@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/Contexts';
 import toast from 'react-hot-toast';
+import './Login.css';
 
 const Login = () => {
 
-    const { user, logIn, resetPassword, googleSignIn, setLoading, githubSignIn, setUser } = useContext(AuthContext)
+    const { logIn, resetPassword, googleSignIn, setLoading, githubSignIn, setUser } = useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -93,21 +94,21 @@ const Login = () => {
     }
     return (
         <div>
-            <div className='my-4 d-flex justify-content-center'>
+            <div className='my-4 d-flex justify-content-center login-container'>
                 <div className='w-50  shadow-sm p-4 border border-1 rounded'>
 
-                    <h3 className='text-center'>Login</h3>
+                    <h3 className='text-center title-style'>Login</h3>
 
                     <form onSubmit={handleLogin} className='mt-3'>
 
                         <div className="row mb-3">
-                            <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                            <label htmlFor="inputEmail3" className="col-sm-2 fw-bold col-form-label">Email</label>
                             <div className="col-sm-10">
                                 <input type="email" name="email" className="form-control" id="inputEmail3" required />
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                            <label htmlFor="inputPassword3" className="col-sm-2 fw-bold col-form-label">Password</label>
                             <div className="col-sm-10">
                                 <input type="password" name='password' className="form-control" id="inputPassword3" required />
                             </div>
@@ -126,12 +127,12 @@ const Login = () => {
                         </div>
 
 
-                        <button type="submit" className="register-btn">Login</button>
+                        <button type="submit" className="register-btn mt-3">Login</button>
                     </form>
 
                     <p className='text-center my-3'>
 
-                        <span>Or</span>
+                        <span className='fw-bold'>Or</span>
 
                     </p>
 
