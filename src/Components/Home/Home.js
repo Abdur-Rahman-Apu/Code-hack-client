@@ -18,10 +18,8 @@ const Home = () => {
             <div className='mt-5 ms-4'>
                 <h3>Courses</h3>
 
-                <div className='row row-cols-1 row-cols-lg-3 g-4 w-100 mt-3'>
-                    {
-                        courses.map(c => <Courses key={c.id} course={c}></Courses>)
-                    }
+                <div>
+                    <Courses></Courses>
                 </div>
             </div>
         </div>

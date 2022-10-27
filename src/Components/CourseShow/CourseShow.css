@@ -1,0 +1,9 @@
+.left-side-sidenav {
+    width: 25%;
+}
+
+.right-side-details {
+    width: 75%;
+}
+
+@media screen and (max-width:991px) {}

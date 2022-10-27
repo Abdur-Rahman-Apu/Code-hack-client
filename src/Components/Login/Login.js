@@ -1,14 +1,18 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/Contexts';
 import toast from 'react-hot-toast';
 
 const Login = () => {
 
-    const { user, logIn, resetPassword, googleSignIn } = useContext(AuthContext)
+    const { user, logIn, resetPassword, googleSignIn, setLoading } = useContext(AuthContext)
 
     const navigate = useNavigate();
+
+    const location = useLocation();
+
+    const from = location?.state?.from?.pathname || '/'
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -21,10 +25,13 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("Successfully log in")
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
@@ -37,6 +44,9 @@ const Login = () => {
             })
             .catch(error => {
                 toast.error(error.message)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
@@ -51,6 +61,9 @@ const Login = () => {
             })
             .catch(error => {
                 toast.error(error.message)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
     return (

@@ -95,7 +95,8 @@ const Contexts = ({ children }) => {
         logOut,
         resetPassword,
         logIn,
-        loading
+        loading,
+        setLoading
     }
 
     return (

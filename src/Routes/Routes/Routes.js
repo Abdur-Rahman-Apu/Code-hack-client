@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Cart from "../../Components/Cart/Cart";
+import Courses from "../../Components/Courses/Courses";
+import CourseShow from "../../Components/CourseShow/CourseShow";
 import Home from "../../Components/Home/Home";
 import Login from "../../Components/Login/Login";
 
 import PageNotFound from '../../Components/PageNotFound/PageNotFound'
 import Register from "../../Components/Register/Register";
+import CourseLayout from "../../layout/CourseLayout";
 import Main from "../../layout/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -19,7 +22,6 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses')
             },
             {
                 path: '/login',
@@ -32,7 +34,19 @@ export const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>
-            }
+            },
+            {
+                path: '/courses',
+                element: <CourseLayout></CourseLayout>,
+                children: [
+
+                    {
+                        path: '/courses',
+                        element: <Courses></Courses>
+                    }
+                ]
+
+            },
         ]
 
     }

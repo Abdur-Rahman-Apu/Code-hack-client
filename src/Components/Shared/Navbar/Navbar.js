@@ -91,7 +91,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <div className='form-switch'>
                                 <input onClick={handleCheckBox} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-                                <label className="form-check-label ms-3" for="flexSwitchCheckChecked">{(!checked) ? 'light' : 'dark'}</label>
+                                <label className="form-check-label ms-3" htmlFor="flexSwitchCheckChecked">{(!checked) ? 'light' : 'dark'}</label>
                             </div>
                         </li>
 

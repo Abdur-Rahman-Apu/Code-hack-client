@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
-    const { user, createUser, updateUserProfile, verifyEmail, googleSignIn } = useContext(AuthContext);
+    const { user, createUser, updateUserProfile, verifyEmail, googleSignIn, setLoading } = useContext(AuthContext);
 
     const [checked, setChecked] = useState(false);
 
@@ -45,6 +45,9 @@ const Register = () => {
                     .catch(error => {
                         toast.error("Error to set name and photo")
                     })
+                    .finally(() => {
+                        setLoading(false)
+                    })
 
 
                 //email verification
@@ -54,6 +57,8 @@ const Register = () => {
                     })
                     .catch(error => {
                         toast.error(error.message)
+                    }).finally(() => {
+                        setLoading(false)
                     })
 
 
@@ -63,6 +68,9 @@ const Register = () => {
             .catch(error => {
                 const errorMessage = error.message;
                 toast.error(errorMessage)
+            })
+            .finally(() => {
+                setLoading(false)
             })
 
     }
