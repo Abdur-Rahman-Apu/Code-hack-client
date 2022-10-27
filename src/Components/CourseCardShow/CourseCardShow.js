@@ -13,7 +13,7 @@ const CourseCardShow = ({ course }) => {
 
         <div className='col'>
             <div className="card h-100">
-                <img src={image} className="card-img-top" height={200} alt="img" />
+                <img src={image} className="card-img-top img-fluid" height={200} alt="img" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text "><span className='fw-bold title-style'>Mentor: </span>{name}</p>

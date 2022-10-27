@@ -86,7 +86,7 @@ const Register = () => {
 
                 <form onSubmit={handleRegister} className='mt-3'>
                     <div className="row mb-3">
-                        <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
+                        <label htmlFor="name" className="col-sm-2 col-form-label">Full Name</label>
                         <div className="col-sm-10">
                             <input type="text" name='name' className="form-control" id="name" />
                         </div>

@@ -12,11 +12,11 @@ const PrivateRoute = ({ children }) => {
     if (!user) {
 
         if (loading) {
-            return <div class="spinner-border text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
+            return <div className="spinner-border text-warning" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
         }
-        console.log(user);
+
         return <Navigate to='/login' state={{ from: location }} replace></Navigate>
     } else {
         return children;
