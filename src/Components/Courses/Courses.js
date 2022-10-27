@@ -15,7 +15,7 @@ const Courses = () => {
 
     return (
 
-        <div className='row row-cols-1 row-cols-lg-2  row-cols-xxl-4 g-4 w-100 mt-3'>
+        <div className='row ms-2 ms-md-0 row-cols-1 row-cols-lg-2  row-cols-xxl-4 g-4 w-100 mt-3'>
             {
                 courses.map(course => <CourseCardShow key={course.id} course={course}></CourseCardShow>)
             }

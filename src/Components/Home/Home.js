@@ -1,16 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 import Carousel from '../Carousel/Carousel';
 import Courses from '../Courses/Courses';
 import './Home.css';
 
 
 const Home = () => {
-
-
-
-    const courses = useLoaderData();
-
 
     return (
         <div>

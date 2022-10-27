@@ -1,0 +1,15 @@
+.category-title {
+    font-family: var(--Inter);
+}
+
+
+.category-section a {
+    text-decoration: none;
+    font-family: var(--roboto);
+    color: black;
+}
+
+.category-section a:hover {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
