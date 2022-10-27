@@ -53,9 +53,6 @@ const Navbar = () => {
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
 
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/cart2">Cart</Link>
-                        </li>
                         <li className="nav-item d-flex ms-4 align-items-center">
                             {
                                 user?.uid ?

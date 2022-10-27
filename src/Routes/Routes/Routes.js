@@ -1,12 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Components/Blog/Blog";
 import Cart from "../../Components/Cart/Cart"
-import Cart2 from "../../Components/Cart/Cart2";
 import Courses from "../../Components/Courses/Courses";
-// import CourseShow from "../../Components/CourseShow/CourseShow";
 import Home from "../../Components/Home/Home";
 import Login from "../../Components/Login/Login";
-
 import PageNotFound from '../../Components/PageNotFound/PageNotFound'
 import Register from "../../Components/Register/Register";
 import Details from "../../Components/Details/Details";
@@ -37,10 +34,6 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
-            },
-            {
-                path: '/cart2',
-                element: <PrivateRoute><Cart2></Cart2></PrivateRoute>
             },
             {
                 path: '/courses',

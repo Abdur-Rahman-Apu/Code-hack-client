@@ -114,10 +114,10 @@ const Details = () => {
 
 
                 <div className='mt-5'>
-                    <p><FcRating /> {tutor.rating}</p>
+                    <p><FcRating /> {tutor.rating} ratings</p>
                     <p><MdReviews /> {reviews} reviews</p>
                     <p><MdOutlineWork /> {profession} </p>
-                    <p><FaAddressCard />{location}</p>
+                    <p><FaAddressCard className='me-1' />{location}</p>
                 </div>
             </div>
 

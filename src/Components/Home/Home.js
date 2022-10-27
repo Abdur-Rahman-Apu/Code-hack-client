@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Carousel from '../Carousel/Carousel';
 import Courses from '../Courses/Courses';
+import './Home.css';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
             <div className='mt-5 ms-4'>
                 <h3>Courses</h3>
 
-                <div>
+                <div className='courses-home-part'>
                     <Courses></Courses>
                 </div>
             </div>
