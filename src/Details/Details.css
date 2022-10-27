@@ -1,0 +1,11 @@
+.author-img {
+    width: 100px;
+    height: auto;
+}
+
+.premium-btn {
+    border: none;
+    background-color: #f6b93b;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

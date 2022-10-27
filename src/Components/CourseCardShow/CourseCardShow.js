@@ -4,7 +4,7 @@ import { GrLanguage } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
 const CourseCardShow = ({ course }) => {
-    const { image, title, rating, price, tutor, language } = course;
+    const { id, image, title, rating, price, tutor, language } = course;
     const { name } = tutor;
 
     console.log(course);
@@ -36,7 +36,7 @@ const CourseCardShow = ({ course }) => {
                     </div>
                 </div>
                 <div className="card-footer">
-                    <Link to='/'><button className='card-btn'>Explore details</button></Link>
+                    <Link to={`/courses/course/${id}`}><button className='card-btn'>Explore details</button></Link>
                 </div>
             </div>
         </div>

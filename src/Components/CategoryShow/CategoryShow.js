@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CategoryShow = () => {
 
@@ -11,8 +12,9 @@ const CategoryShow = () => {
     }, [])
     return (
         <div className='mt-5 text-center'>
+            <h3>All courses</h3>
             {
-                categories.map(category => <p>{category.name}</p>)
+                categories.map(category => <Link to={`/courses/course/${category.id}`}><p>{category.name}</p></Link>)
             }
         </div>
     );

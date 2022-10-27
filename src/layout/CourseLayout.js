@@ -5,7 +5,7 @@ import CategoryShow from '../Components/CategoryShow/CategoryShow';
 
 const CourseLayout = () => {
     return (
-        <div className='row'>
+        <div className='row w-100'>
 
             <div className='col-4'>
                 <CategoryShow></CategoryShow>
