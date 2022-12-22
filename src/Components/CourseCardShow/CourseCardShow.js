@@ -9,6 +9,8 @@ const CourseCardShow = ({ course }) => {
     const { name } = tutor;
 
 
+
+
     return (
 
         <div className='col'>

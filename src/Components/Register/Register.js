@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Contexts/Contexts';
 import './Register.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -13,6 +13,7 @@ const Register = () => {
 
 
     const navigate = useNavigate();
+
 
 
 

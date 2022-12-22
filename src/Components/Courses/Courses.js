@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../Contexts/Contexts';
 import CourseCardShow from '../CourseCardShow/CourseCardShow';
 import './Courses.css'
 
 const Courses = () => {
     const [courses, setCourses] = useState([]);
+
+    const { loading } = useContext(AuthContext)
 
     // load courses from the server 
     useEffect(() => {
@@ -12,6 +15,11 @@ const Courses = () => {
             .then(data => setCourses(data))
     }, [])
 
+    if (loading) {
+        return <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </div>
+    }
 
     return (
 
